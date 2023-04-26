@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fnHelp() {
+            var x, y, n;
+
+            x = (Number(document.getElementById('height').value));
+
+            y = (Number(document.getElementById('weight').value));
+
+            BMI = y / ((x / 100) ** 2);
+
+            msg = "您的身高為" + x + '公分，您的體重為' + y + '公斤\n' + '您的BMI值為' + BMI;
+            // alert(msg);
+            msg1 = '您的身高為' + x + '公分<br><br>您的體重為' + y + '公斤<br><br>您的BMI值為:' + BMI + '<br><br>';
+
+            if (BMI < 18.5) {
+                n = '<span style=color:blue>過輕</span>';
+            }
+            else if (BMI < 24) {
+                n = '<span style=color:green>健康</span>';
+            }
+            else if (BMI < 27) {
+                n = '<span style=color:red>過重</span>';
+            }
+            else if (BMI < 30) {
+                n = '<span style=color:red>輕度肥胖</span>';
+            }
+            else if (BMI < 35) {
+                n = '<span style=color:red>中度肥胖</span>';
+            }
+            else {
+                n = '<span style=color:red>重度肥胖</span>';
+            }
+
+            document.getElementById("demo").innerHTML = msg1 + '您目前體態為:' + n
+        }
+
+        function fnHelp1() {
+            alert('請輸入您的身高體重')
+        }
+
+
+    </script>
+
+
+</head>
+
+<body>
+    <form >
+        身高:<input type="text" id="height" name="n_height">公分<br />
+        體重:<input type="text" id="weight" name="n_weight">公斤<br />
+        <hr>
+        <input type="button" value="計算BMI" onclick="fnHelp()">
+        <input type="reset" value="清除">
+        <input type="button" value="說明" onclick="fnHelp1()">
+        <hr>
+        <p id="demo"></p>
+
+    </form>
+
+</body>
+
+</html>
+
+
+<!-- <script>
+    var x;
+
+    var y;
+
+    var n;
+
+
+    x = (Number(prompt('請輸入身高(cm)')));
+    alert(typeof x);
+
+    y = (Number(prompt('請輸入體重(kg)')));
+    alert(typeof y);
+
+    BMI = y / ((x / 100) ** 2);
+
+    msg = "您的身高為" + x + '公分，您的體重為' + y + '公斤\n' + '您的BMI為' + BMI;
+    alert(msg);
+    msg1 = '您的身高為' + x + '公分<br>您的體重為' + y + '公斤<br>您的BMI為' + BMI + '<br>';
+
+    document.write(msg1)
+
+    '<h1>您目前為</h1>'
+
+    if (BMI < 18.5) {
+        n = '過輕';
+    }
+    else if (BMI >= 18.5, BMI < 24) {
+        n = '健康';
+    }
+    else if (BMI >= 24, BMI < 27) {
+        n = '過重';
+    }
+    else if (BMI >= 27, BMI < 30) {
+        n = '輕度肥胖';
+    }
+    else if (BMI >= 30, BMI < 35) {
+        n = '中度肥胖';
+    }
+    else {
+        n = '重度肥胖';
+    }
+
+    document.write('您目前為:' + n)
+
+
+</script> -->
